@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal/reset.css">
+    <link rel="stylesheet" href="css/reveal/reveal.css">
+    <link rel="stylesheet" href="css/reveal/theme/white.css">
+</head>
+<!-- Check https://www.11ty.dev/ -->
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section id="first">Slide 1</section>
+            <section id="with-svg">
+                <svg viewbox="0 0 200 100">
+                    <circle cx="30" cy="55" r="10" fill="blue" />
+                </svg>
+                <span id="move-right" class="fragment"></span>
+                <span id="move-up" class="fragment"></span>
+            </section>
+        </div>
+    </div>
+
+    <script src="js/reveal/reveal.js"></script>
+    <script src="js/reveal/plugin/markdown/markdown.js"></script>
+    <script src="js/svg/svg.min.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown]
+        }).then(() => {
+            var svg = SVG(document.querySelector("#with-svg svg"))
+            var circle = svg.findOne("circle")
+            var circleInitPosition = { cx: 30, cy: 55 }
+            Reveal.on('slidechanged', event => {
+                // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+                if (event.previousSlide.id === "with-svg") {
+                    circle.attr(circleInitPosition)
+                }
+            });
+            Reveal.on('slidetransitionend', event => {
+                console.log("slidetransitionend: " + event.currentSlide.id);
+            });
+            Reveal.on('fragmentshown', event => {
+                console.log("fragmentshown: " + event.fragment.id);
+                if (event.fragment.id == "move-right") {
+                    circle.animate(500, 0, 'now')
+                        .attr({ cx: 60 })
+                }
+                if (event.fragment.id == "move-up") {
+                    circle.animate(500, 0, 'now')
+                        .attr({ cy: 25 })
+                }
+            });
+            Reveal.on('fragmenthidden', event => {
+                console.log("fragmenthidden: " + event.fragment.id);
+                if (event.fragment.id == "move-right") {
+                    circle.animate(500, 0, 'now')
+                        .attr(circleInitPosition)
+                }
+                if (event.fragment.id == "move-up") {
+                    circle.animate(500, 0, 'now')
+                        .attr({ cy: 55 })
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>
