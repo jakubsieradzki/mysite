@@ -1,10 +1,18 @@
----
-layout: base.njk
-additionalStyles:
-  - reveal-post.css
----
+{% extends "base.njk" %}
+{% block styles %}
+  <link rel="stylesheet" href="/css/reveal-post.css">
+{% endblock %}
 
+{% block mainContent %}
+{# TODO - create blocks for nav and slides #}
 <section class="revel-post-container">
   <nav class="post-navigation"></nav>
   <section class="post-content"></section>
 </section>
+{% endblock %}
+
+{% block scripts %}
+  <script src="/js/reveal/reveal.js"></script>
+  <script src="/js/reveal/plugin/markdown/markdown.js"></script>
+  <script src="/js/svg/svg.min.js"></script>
+{% endblock %}

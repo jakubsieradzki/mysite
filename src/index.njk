@@ -1,8 +1,10 @@
 ---
-layout: simple-page.njk
 mainText: HELLO THERE
 ---
-<p>
+{% extends "simple-page.njk" %}
+{% block pageContent%}
+  <p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus congue porta congue.
 Integer id velit metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam hendrerit elementum euismod. Aliquam aliquet nibh feugiat, rutrum quam in, finibus nisi
 </p>
+{% endblock %}

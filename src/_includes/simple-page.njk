@@ -1,10 +1,11 @@
----
-layout: base.njk
-additionalStyles:
-  - simple-page.css
----
+{% extends "base.njk" %}
+{% block styles %}
+  <link rel="stylesheet" href="/css/simple-page.css">
+{% endblock %}
 
-<section class="page-content">
-  <h1>{{mainText}}</h1>
-  {{ content | safe }}
-</section>
+{% block mainContent %}
+  <section class="page-content">
+    <h1>{{ mainText }}</h1>
+    {% block pageContent %}{% endblock %}
+  </section>
+{% endblock %}

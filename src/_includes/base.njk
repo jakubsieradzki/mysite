@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>title</title>
     <link rel="stylesheet" href="/css/base.css">
-    {% for cssFile in additionalStyles %}
-      <link rel="stylesheet" href="/css/{{ cssFile }}">
-    {% endfor %}
+    {% block styles %}{% endblock %}
   </head>
   <body>
     <header>
@@ -18,7 +16,7 @@
       </nav>
     </header>
     <main>
-      {{ content | safe }}
+      {% block mainContent %}{% endblock %}
     </main>
     <footer>
       <nav class="footer-nav">
@@ -27,5 +25,6 @@
         <a href="/blog">Source</a>
       </nav>
     </footer>
+    {% block scripts %}{% endblock %}
   </body>
 </html>
