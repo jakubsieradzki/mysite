@@ -15,7 +15,7 @@ body {
   height: 100vh;
 }
 
-header {
+#main-header {
   flex-shrink: 0;
 
   display: flex;
@@ -46,7 +46,7 @@ main {
   background-color: white;
 }
 
-footer {
+#main-footer {
   flex-shrink: 0;
   background-color: white;
   display: flex;
@@ -55,11 +55,11 @@ footer {
   border-top: 2px solid gainsboro;
 }
 
-footer a {
+#main-footer a {
   color: grey;
 }
 
-.footer-nav {
+#main-footer .footer-nav {
   display: flex;
   gap: 1.5rem;
 }
