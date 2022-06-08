@@ -3,3 +3,30 @@
   display: flex;
   flex-direction: row;
 }
+
+.post-navigation {
+  width: 30vw;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+#post-nav-list li {
+  list-style: none;
+  padding-bottom: 10px;
+}
+
+#post-nav-list li.active {
+  text-decoration: underline;
+}
+
+.post-content {
+  width: 70vw;
+  padding: 2rem;
+}
+
+.reveal {
+  /* border: rgba(0, 0, 255, .2) solid 2px; */
+  /* box-shadow: 6px 6px 2px 1px rgba(0, 0, 255, .2); */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

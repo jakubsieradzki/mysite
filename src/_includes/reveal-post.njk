@@ -1,7 +1,6 @@
 {% extends "base.njk" %}
 {% block styles %}
   <link rel="stylesheet" href="/css/reveal-post.css">
-  <link rel="stylesheet" href="/css/reveal/reset.css">
   <link rel="stylesheet" href="/css/reveal/reveal.css">
   <link rel="stylesheet" href="/css/reveal/theme/white.css">
 {% endblock %}
@@ -10,7 +9,7 @@
   {# TODO - create blocks for nav and slides #}
   <section class="revel-post-container">
     <nav class="post-navigation">
-      {% block slidesNavigation %}{% endblock %}
+      <ul id="post-nav-list"></ul>
     </nav>
     <section class="post-content">
       <div class="reveal">
@@ -26,11 +25,5 @@
   <script src="/js/reveal/reveal.js"></script>
   <script src="/js/reveal/plugin/markdown/markdown.js"></script>
   <script src="/js/svg/svg.min.js"></script>
-  <script>
-    Reveal.initialize({
-      hash: true,
-      // Learn about plugins: https://revealjs.com/plugins/
-      plugins: [RevealMarkdown]
-    })
-  </script
+  <script src="/js/reveal-post.js" defer></script>
 {% endblock %}
