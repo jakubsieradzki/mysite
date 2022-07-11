@@ -6,7 +6,7 @@
 html,
 body {
   height: 100%;
-  font-family: Helvetica, sans-serif
+  font-family: Source Sans Pro, Helvetica, sans-serif;
 }
 
 body {
@@ -21,8 +21,8 @@ body {
   display: flex;
   justify-content: space-between;
 
-  padding: 1rem;
-  border-bottom: 2px solid gainsboro;
+  padding: 0.8rem;
+  border-bottom: 2px solid blueviolet;
 }
 
 header a {
@@ -30,15 +30,31 @@ header a {
   color: black;
 }
 
+
+@keyframes color-animation {
+  0% { color: black; }
+  50% { color: blueviolet; }
+  100% { color: black; }
+}
+
 #name-link {
   font-weight: 700;
-  font-size: larger;
+  font-size: x-large;
+}
+#name-link:hover {
+  animation-name: color-animation;
+  animation-duration: 4s;
+}
+
+#name-link span {
+  color: blueviolet;
 }
 
 .header-nav {
   margin-right: 50px;
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 main {
