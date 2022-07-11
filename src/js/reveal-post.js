@@ -17,7 +17,8 @@ function createNavigation() {
   document.querySelectorAll(".slides > section")
     .forEach(slide => {
       const slideId = slide.id
-      const listElement = navListElement(slideId)
+      const navName = slide.getAttribute("data-nav-name")
+      const listElement = navListElement(slideId, navName)
       if (currentSlideId === slideId) {
         listElement.classList.add("active")
       }
@@ -25,10 +26,10 @@ function createNavigation() {
     })
 }
 
-function navListElement(slideId) {
+function navListElement(slideId, navName) {
   const listElement = document.createElement("li")
   listElement.id = "list-item-" + slideId
-  listElement.textContent = slideId
+  listElement.textContent = navName
   return listElement
 }
 
