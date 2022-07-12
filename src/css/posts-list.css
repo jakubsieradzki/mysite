@@ -1,0 +1,51 @@
+/* base override */
+.page-content {
+  max-width: 1400px;
+}
+
+.posts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.posts-container a {
+  text-decoration: none;
+}
+
+.post-item {
+  min-width: 300px;
+  border: 2px solid rgba(223, 223, 223);
+  border-radius: 10px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: black;
+}
+
+.post-item:hover {
+  border-color: rgba(138, 43, 226, 0.5);
+}
+
+.post-item-title {
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.post-item-description {
+  padding: 0 1rem 1rem 1rem;
+}
+
+@media only screen and (max-width: 1150px) {
+  .posts-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .posts-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

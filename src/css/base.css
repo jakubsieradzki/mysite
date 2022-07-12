@@ -22,7 +22,7 @@ body {
   justify-content: space-between;
 
   padding: 0.8rem;
-  border-bottom: 2px solid blueviolet;
+  border-bottom: 2px solid rgb(138, 43, 226);
 }
 
 header a {
