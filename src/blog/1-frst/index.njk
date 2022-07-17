@@ -5,8 +5,38 @@ description: Some short description of this post
 {% extends "reveal-post.njk" %}
 
 {% block slides %}
-  <section id="first" data-nav-name="First slide">Slide 1</section>
-  <section id="second" data-nav-name="Second slide">Slide 2</section>
-  <section id="another" data-nav-name="Another one">another</section>
-  <section id="antnext" data-nav-name="And yet another">and another one</section>
+  <section id="acid-1" data-nav-name="ACID" data-auto-animate>
+    <h1>ACID</h1>
+  </section>
+  <section id="acid-2" data-nav-name="Unpack ACID" data-auto-animate>
+    <h1>ACID</h1>
+    <div style="text-align: left">
+      <h2><span style="color: red">A</span>tomic</h2>
+    </div>
+    <div style="text-align: left">
+      <h2><span style="color: red">C</span>onsistency</h2>
+    </div>
+    <div style="text-align: left; display: flex; align-items: center">
+      <div><h2><span style="color: red">I</span>solation</h2></div>
+    </div>
+    <div style="text-align: left">
+      <h2><span style="color: red">D</span>urability</h2>
+    </div>
+  </section>
+  <section id="acid-3" data-nav-name="Focus on" data-auto-animate>
+    <h1>ACID</h1>
+    <div style="text-align: left">
+      <h2><span style="color: red">A</span>tomic</h2>
+    </div>
+    <div style="text-align: left">
+      <h2><span style="color: red">C</span>onsistency</h2>
+    </div>
+    <div style="text-align: left; display: flex; align-items: center">
+      <div><h2><span style="color: red">I</span>solation</h2></div>
+      <div style="margin-left: 10px"><span>&#8249;</span>  We will focus on this one</div>
+    </div>
+    <div style="text-align: left">
+      <h2><span style="color: red">D</span>urability</h2>
+    </div>
+  </section>
 {% endblock %}

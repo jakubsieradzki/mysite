@@ -11,13 +11,26 @@
   justify-content: center;
 }
 
+#post-nav-list {
+  width: 100%;
+  padding-left: 2rem;
+}
+
 #post-nav-list li {
   list-style: none;
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
+  transition: padding-left 0.4s;
+}
+
+#post-nav-list li:not(:last-child) { 
+  margin-bottom: 10px;  
 }
 
 #post-nav-list li.active {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  padding-left: 15px;
+  list-style: disclosure-closed;
+  color: blueviolet;
 }
 
 .post-content {
