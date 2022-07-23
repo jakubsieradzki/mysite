@@ -30,12 +30,16 @@ function createNavigation() {
 function navListElement(slideId, navName) {
   const listElement = document.createElement("li")
   listElement.id = "list-item-" + slideId
-  listElement.textContent = navName
+
+  const elementLink = document.createElement("a")
+  elementLink.setAttribute("href", "#/" + slideId)
+  elementLink.textContent = navName
+
+  listElement.appendChild(elementLink)
   return listElement
 }
 
 function initEvents() {
-  
   Reveal.on('slidechanged', event => {
     // event.previousSlide, event.currentSlide, event.indexh, event.indexv
     const slideId = event.currentSlide.id;
@@ -45,7 +49,7 @@ function initEvents() {
       activeElement.classList.remove("active")
       currentElement.classList.add("active")
     }
-});
+  });
 }
 
 initReveal()

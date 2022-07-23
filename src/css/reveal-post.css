@@ -11,7 +11,7 @@
 .post-navigation {
   width: 30vw;
   max-width: 250px;
-  border: 2px solid #dedede;
+  border: 1px solid #dedede;
   background-color: white;
   border-radius: 10px;
   padding: 1rem;
@@ -30,15 +30,24 @@
   transition: padding-left 0.4s;
 }
 
-#post-nav-list li:not(:last-child) { 
-  margin-bottom: 10px;  
+#post-nav-list li a {
+  text-decoration: none;
+  color: black;
+}
+
+#post-nav-list li.active a {
+  color: var(--mysite-main-color);
+}
+
+#post-nav-list li:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 #post-nav-list li.active {
   /* text-decoration: underline; */
   padding-left: 15px;
   list-style: disclosure-closed;
-  color: blueviolet;
+  color: var(--mysite-main-color);
 }
 
 /* CONTENT */
@@ -52,6 +61,6 @@
   /* border: rgba(0, 0, 255, .2) solid 2px; */
   /* box-shadow: 6px 6px 2px 1px rgba(0, 0, 255, .2); */
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-  border: 2px solid #dedede;
+  border: 1px solid #dedede;
   border-radius: 10px;
 }
