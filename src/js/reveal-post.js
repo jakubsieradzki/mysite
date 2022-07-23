@@ -3,6 +3,7 @@ function initReveal() {
   Reveal.initialize({
     hash: true,
     embedded: true,
+    navigationMode: "linear",
     // Learn about plugins: https://revealjs.com/plugins/
     plugins: [RevealMarkdown]
   }).then(() => {
@@ -13,8 +14,8 @@ function initReveal() {
 
 function createNavigation() {
   const navList = document.querySelector(".post-navigation > ul")
-  const currentSlideId = document.querySelector(".slides section.present").id
-  document.querySelectorAll(".slides > section")
+  const currentSlideId = document.querySelector('.slides section[id][class*="present"]').id
+  document.querySelectorAll(".slides section[id]")
     .forEach(slide => {
       const slideId = slide.id
       const navName = slide.getAttribute("data-nav-name")
