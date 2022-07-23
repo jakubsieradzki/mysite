@@ -1,12 +1,20 @@
+/* CONTAINER */
 .revel-post-container {
   height: 100%;
   display: flex;
+  gap: 2rem;
   flex-direction: row;
+  justify-content: center;
 }
 
+/* SIDE NAVIGATION */
 .post-navigation {
   width: 30vw;
-  padding: 2rem;
+  max-width: 250px;
+  border: 2px solid #dedede;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
   display: flex;
   justify-content: center;
 }
@@ -33,13 +41,17 @@
   color: blueviolet;
 }
 
+/* CONTENT */
 .post-content {
   width: 70vw;
-  padding: 2rem;
+  max-width: 1200px;
+  /* padding: 2rem; */
 }
 
 .reveal {
   /* border: rgba(0, 0, 255, .2) solid 2px; */
   /* box-shadow: 6px 6px 2px 1px rgba(0, 0, 255, .2); */
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  border: 2px solid #dedede;
+  border-radius: 10px;
 }
